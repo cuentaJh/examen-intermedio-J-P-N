@@ -1,0 +1,9 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    {% for platos in data %}
+        <p>Nombre del plato: {{ platos.nombre }} - Precio : {{ platos.precio }} - Procedencia: {{ platos.procedencia }}</p>
+
+    {% endfor %}
+
+{% endblock %}

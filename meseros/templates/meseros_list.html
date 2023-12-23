@@ -1,0 +1,9 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    {% for meseros in data %}
+        <p>Nombre del mesero: {{ meseros.nombre }} - Edad : {{ meseros.edad }} - Procedencia: {{ meseros.procedencia }}</p>
+
+    {% endfor %}
+
+{% endblock %}
