@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Editar Mesero con VBC</h1>
+    <div class="card-body">
+        <form method="post">
+
+            {% csrf_token %}
+            {{ form.as_p }}
+            <a class="btn btn-primary" href="{% url 'meseros_list_vc' %}" role="button">Cancelar</a>
+            <button class="btn btn-success" type="submit">Guardar</button>
+
+        </form>
+
+    </div>
+{% endblock %}

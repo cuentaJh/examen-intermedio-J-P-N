@@ -1,7 +1,7 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    <h3>Lista de meseros registrados</h3>
+    <h3>Lista de meseros registrados VBC</h3>
 
     <table class="table">
       <thead>
@@ -12,13 +12,13 @@
         </tr>
       </thead>
       <tbody>
-      {% for meseros in data %}
+      {% for meseros in object_list %}
           <tr>
             <th scope="row">{{ forloop.counter }}</th>
             <td><p>{{ meseros.nombre }} tiene {{ meseros.edad }} años y es de {{ meseros.procedencia }}</p></td>
             <td>
-               <a class="btn btn-primary" href="#" role="button">Editar</a>
-               <a class="btn btn-danger" href="#" role="button">Eliminar</a>
+               <a class="btn btn-primary" href="{% url 'meseros_edit_vc' meseros.id %}" role="button">Editar</a>
+               <a class="btn btn-danger" href="{% url 'meseros_delete_vc' meseros.id %}" role="button">Eliminar</a>
 
             </td>
 
@@ -29,5 +29,6 @@
 
       </tbody>
     </table>
+
 
 {% endblock %}

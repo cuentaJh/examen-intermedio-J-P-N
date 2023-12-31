@@ -1,0 +1,19 @@
+{% extends 'base_generic.html' %}
+
+{% block  content %}
+
+    <div class="card-body">
+        <h1>Crear Mesero</h1>
+        <form method="post">
+
+{#            agregamos el token de seguridad antes de enviar a la BD #}
+            {% csrf_token %}
+            {{ data.as_p }}
+            <a class="btn btn-primary" href="{% url 'meseros_list_vc' %}" role="button">Cancelar</a>
+            <button class="btn btn-success" type="submit">Guardar Owner</button>
+        </form>
+    </div>
+
+
+
+{% endblock %}

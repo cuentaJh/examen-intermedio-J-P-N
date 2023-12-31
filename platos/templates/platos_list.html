@@ -1,9 +1,32 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-    {% for platos in data %}
-        <p>Nombre del plato: {{ platos.nombre }} - Precio : {{ platos.precio }} - Procedencia: {{ platos.procedencia }}</p>
 
-    {% endfor %}
+    <h3>Lista de platos registrados</h3>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for platos in data %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td><p>{{ platos.nombre }} -  {{ platos.procedencia }} - PRECIO: S/. {{ platos.precio }} </p></td>
+            <td>
+               <a class="btn btn-primary" href="#" role="button">Editar</a>
+               <a class="btn btn-danger" href="#" role="button">Eliminar</a>
+
+            </td>
+
+          </tr>
+
+      {% endfor %}
+      </tbody>
+    </table>
 
 {% endblock %}
